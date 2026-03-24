@@ -11,6 +11,7 @@ import { prefixer } from 'stylis';
 
 import { ThemeProvider } from '@mui/material';
 import { CssBaseline } from '@mui/material';
+import { theme } from './theme_params.jsx';
 
 // Create rtl cache
 const cacheRtl = createCache({
