@@ -4,10 +4,11 @@ import EmptyLayout from "../LayOut/EmptyLayout";
 import HomePage from "../_Features/HomePage/HomePage.jsx";
 import About from "../_Features/About/About.jsx";
 import LangList from "../_Features/Language/LangList.jsx";
+import AppLayout from "../LayOut/AppLayout.jsx";
 
 const router = createBrowserRouter([
     {
-        element:<EmptyLayout />,
+        element:<AppLayout />,
         children:[
             {path:"/",         element:<HomePage />,     },
             {path:"/About",     element:<About />,     },

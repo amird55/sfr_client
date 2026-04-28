@@ -3,16 +3,11 @@ import { AppBar, Toolbar, Typography, IconButton, useMediaQuery, useTheme, Box
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { HeaderHeight } from "../theme_params.jsx";
-import {PageTitle} from "../vars.jsx";
 
-function Header({ onMenuClick , title = PageTitle}) {
+function Header({ onMenuClick }) {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-    
-    useEffect(() => {
-        document.title = title;
-    }, [title]);
-    
+
     return (
         <AppBar
             position="static"
@@ -37,7 +32,7 @@ function Header({ onMenuClick , title = PageTitle}) {
                     </IconButton>
                 )}
                 <Typography variant="h6" component="h1" sx={{pr:3}}>
-                    {PageTitle}
+                    תוכנת הספרים
                 </Typography>
         
                 {/* Spacer to push content to the edges */}

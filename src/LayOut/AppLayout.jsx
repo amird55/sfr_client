@@ -5,7 +5,6 @@ import Footer from "./Footer.jsx";
 import { Outlet, useMatches } from "react-router";
 import { Box, Typography } from '@mui/material';
 import {menuWidth, HeaderHeight, FooterHeight, FooterBgColor, HeaderBgColor} from "../theme_params.jsx";
-import {PageTitle} from "../vars.jsx";
 
 function AppLayout() {
     const [mobileOpen, setMobileOpen] = useState(false);
@@ -14,10 +13,6 @@ function AppLayout() {
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
-    const currentTitle = useMemo(() => {
-        const match = matches.find(match => match.handle?.title);
-        return match?.handle?.title || PageTitle;
-    }, [matches]);
 
     return (
         <Box sx={{
@@ -46,7 +41,7 @@ function AppLayout() {
                 gridArea: 'header',
                 height: `${HeaderHeight}px`
             }}>
-                <Header onMenuClick={handleDrawerToggle} title={currentTitle} />
+                <Header onMenuClick={handleDrawerToggle} />
             </Box>
 
             <Box sx={{
