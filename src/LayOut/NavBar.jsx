@@ -10,23 +10,14 @@ import {
     useMediaQuery,
 } from '@mui/material';
 import { NavLink,useLocation } from 'react-router';
-//import { navItems } from '../Routers/main_R';
+import { navItems } from '../Routers/main_R';
 import { menuWidth } from "../theme_params.jsx";
-
-import HomeIcon from '@mui/icons-material/Home';
-import InfoIcon from '@mui/icons-material/Info';
-import LanguageIcon from '@mui/icons-material/Language';
 
 const NavBar = ({ mobileOpen, onClose }) => {
     const theme = useTheme();
     const location = useLocation();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
     
-   const navItems = [
-       {path:"/", name:"ראשי", icon:<HomeIcon />},
-       {path:"/About", name:"אודות", icon:<InfoIcon />},
-       {path:"/Lang", name:"שפות", icon:<LanguageIcon />},
-   ]
     // console.log(location.pathname);
     const drawerContent = (
         <Box sx={{ height: '100%' }}>
