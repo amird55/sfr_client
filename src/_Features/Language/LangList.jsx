@@ -7,12 +7,12 @@ function LangList() {
 
     if (isLoading) return <p>Loading...</p>;
     if (isError) return <p>Error: {error.message}</p>;
-    const data = [
-        {id:1, name:"English"},
-        {id:2, name:"Arabic"},
-        {id:3, name:"French"},
-        {id:4, name:"Spanish"},
-    ]
+    // const data = [
+    //     {id:1, name:"English"},
+    //     {id:2, name:"Arabic"},
+    //     {id:3, name:"French"},
+    //     {id:4, name:"Spanish"},
+    // ]
     return (
         <>
             <Typography variant="h2" sx={{ textAlign: 'center', mt: 2 }}>
