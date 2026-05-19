@@ -1,5 +1,25 @@
-import {useQuery} from "@tanstack/react-query";
-import {GetAllLangs} from "./apiLang";
+import {useMutation, useQuery, useQueryClient} from "@tanstack/react-query";
+import {AddLang, GetAllLangs} from "./apiLang";
+
+function useAddLang() {
+    const queryClient = useQueryClient();
+
+    const {isLoading:isAdding, mutate:addLang} = useMutation(
+        {
+            mutationFn: AddLang,
+            onError: async (err) => {
+                console.log("err", err)
+            },
+            onSuccess: ()=>{
+                queryClient.invalidateQueries({
+                    queryKey: ['allLangs'],
+                })
+            },
+        }
+    );
+
+    return {isAdding, addLang};
+}
 
 function useGetLangs() {
     const query = useQuery({
@@ -14,4 +34,4 @@ function useGetLangs() {
     return query;
 }
 
-export {useGetLangs};
+export {useGetLangs, useAddLang};

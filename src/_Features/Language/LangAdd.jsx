@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
 import {Box, Button, TextField} from "@mui/material";
+import {useAddLang} from "./apiHookLang.js";
 
 function LangAdd(props) {
+    const {isAdding, addLang} = useAddLang();
     const [formData, setFormData] = useState({
         id:-1,
         name: '',
@@ -17,7 +19,7 @@ function LangAdd(props) {
         e.preventDefault();
 
         console.log(formData, "formData");
-
+        addLang(formData);
     }
 
     return (
@@ -32,7 +34,7 @@ function LangAdd(props) {
                 />
             </Box>
 
-            <Button type="submit" variant="contained" color="primary" >
+            <Button type="submit" variant="contained" color="primary" disabled={isAdding} >
                 שמור
             </Button>
 
