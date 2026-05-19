@@ -3,7 +3,7 @@ import {createBrowserRouter} from "react-router";
 import EmptyLayout from "../LayOut/EmptyLayout";
 import HomePage from "../_Features/HomePage/HomePage.jsx";
 import About from "../_Features/About/About.jsx";
-import LangList from "../_Features/Language/LangList.jsx";
+import LangPage from "../_Features/Language/LangPage.jsx";
 import AppLayout from "../LayOut/AppLayout.jsx";
 import LevelsList from "../_Features/Levels/LevelsList.jsx";
 
@@ -13,7 +13,7 @@ const router = createBrowserRouter([
         children:[
             {path:"/",         element:<HomePage />,     },
             {path:"/About",     element:<About />,     },
-            {path:"/Lang",     element:<LangList />,     },
+            {path:"/Lang",     element:<LangPage />,     },
             {path:"/Lvl",     element:<LevelsList />,     },
         ]
     },

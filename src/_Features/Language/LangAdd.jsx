@@ -1,8 +1,42 @@
-import React from 'react';
+import React, {useState} from 'react';
+import {Box, Button, TextField} from "@mui/material";
 
 function LangAdd(props) {
+    const [formData, setFormData] = useState({
+        id:-1,
+        name: '',
+    });
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prevData => ({
+            ...prevData,
+            [name]: value
+        }));
+    };
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        console.log(formData, "formData");
+
+    }
+
     return (
-        <div></div>
+        <form onSubmit={handleSubmit}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+                <TextField
+                    name="name"
+                    label="שם השפה"
+                    onChange={handleChange}
+                    fullWidth
+                    required
+                />
+            </Box>
+
+            <Button type="submit" variant="contained" color="primary" >
+                שמור
+            </Button>
+
+        </form>
     );
 }
 
